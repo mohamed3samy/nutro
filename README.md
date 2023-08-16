@@ -2,7 +2,7 @@
 
 ![App Screenshot](assets/nutro.png)
 
-Nutro is a simple calorie counter app built with HTML, CSS, JavaScript, Boostrap, and Webpack. It tracks your meals and workouts and calculates the total calories burned and consumed.
+Nutro is a simple calorie counter app built with HTML, CSS, JavaScript, Bootstrap, and Webpack. It tracks your meals and workouts and calculates the total calories burned and consumed.
 
 ## Getting Started
 
