@@ -1,13 +1,16 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
 	mode: 'development',
 	entry: './src/app.js',
 	output: {
-		path: path.resolve(__dirname, 'public'),
 		filename: 'bundle.js',
+		path: path.resolve(__dirname, 'public'),
+		assetModuleFilename: '[name][ext]',
+		clean: true,
 	},
 	devServer: {
 		static: {
@@ -35,14 +38,19 @@ module.exports = {
 					},
 				},
 			},
+			{
+				test: /\.(png|jpg|jpeg|gif|svg)$/i,
+				type: 'asset/resource',
+			},
 		],
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			title: 'Nutro',
+			title: 'index',
 			filename: 'index.html',
 			template: './src/index.html',
 		}),
+		new FaviconsWebpackPlugin('./src/assets/favicon.png'),
 		new MiniCssExtractPlugin(),
 	],
 };
